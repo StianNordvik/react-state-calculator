@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
+import { useState} from "react";
 
 export default function CalculatorNumbers ({ value, setValue }){
+
+    const [stored, setStored] = useState(0);
 
     const SetNumberButton = () => {
         if(value[0] === 0 && value[1] !== null || value[0] === 0 && value[1] === 0){
@@ -13,6 +16,8 @@ export default function CalculatorNumbers ({ value, setValue }){
     return (
         <div className="panel">
         <p>{SetNumberButton()}</p>
+        <button onClick={() => setStored(value)}>Store</button>
+        <button onClick={() => setValue(stored)}>Recall</button>
           <div className="numbers">
             <button onClick={() => setValue(value += "1")}>1</button>
             <button onClick={() => setValue(value += "2")}>2</button>
