@@ -10,18 +10,20 @@ export default function Calculator() {
     const [sum, setSum] = useState(0)
   
     const calculateSum = () => {
+      let x = parseInt(number1);
+      let y = parseInt(number2);
       switch(operator) {
         case "+":
-          setSum(number1 + number2);
+          setSum(x + y);
           break;
         case "-":
-          setSum(number1 - number2);
+          setSum(x - y);
           break;
         case "*":
-          setSum(number1 * number2);
+          setSum(x * y);
           break;
         case "÷":
-          setSum(number1 / number2);
+          setSum(x / y);
           break;
       }
     }
